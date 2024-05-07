@@ -29,5 +29,13 @@ int main()
 		}
 	}
 
+	if (errorsNumber == ERROR_ALLOWDED) {
+		cout << "Vous avez perdu ! Le mot etait : " << wordToGuess;
+	}
+
+	if (errorsNumber < ERROR_ALLOWDED && wordToGuess == wordState) {
+		cout << "Felicitations ! Vous avez gagne !" << endl;
+	}
+
 	return EXIT_SUCCESS;
 }
