@@ -3,6 +3,7 @@
 #include "../include/Word.h"
 #include "../include/Letter.h"
 #include "../include/Constants.h"
+#include "../include/hangedMan.h"
 
 using namespace std;
 
@@ -16,11 +17,16 @@ int main()
 	auto wordState = string(wordToGuessLength, '-');
 	displayWordState(wordState, wordToGuessLength);
 
-	auto errorNumber{ 0 };
-	while (errorNumber < ERROR_ALLOWDED && wordToGuess != wordState) {
+	auto errorsNumber{ 0 };
+	while (errorsNumber < ERROR_ALLOWDED && wordToGuess != wordState) {
 		auto suggestedLetter = suggestLetter();
 		auto replacedLettersNumber = replaceFoundLetter(suggestedLetter, wordToGuess, wordState, wordToGuessLength);
 		displayWordState(wordState, wordToGuessLength);
+
+		if (replacedLettersNumber == 0) {
+			errorsNumber++;
+			displayHangedMan(errorsNumber);
+		}
 	}
 
 	return EXIT_SUCCESS;
