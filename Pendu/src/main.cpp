@@ -1,10 +1,8 @@
 #include <iostream>
-
-using namespace std;
-
-#include <iostream>
 #include <string>
 #include "../include/Word.h"
+
+using namespace std;
 
 int main() 
 {
