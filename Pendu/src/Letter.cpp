@@ -11,7 +11,19 @@ char suggestLetter() {
 		cout << "Proposez une lettre : ";
 		cin >> input;
 	}
-	char letter = toupper(input[0]);
+	auto letter = toupper(input[0]);
 	return letter;
 
+}
+
+int replaceFoundLetter(char letter, string_view wordToGuess, string& wordState, int const& wordToGuessLength) {
+	auto replacedLettersNumber{ 0 };
+	for (auto i{ 0 }; i < wordToGuessLength; i++) {
+		if (letter == wordToGuess[i]) {
+			wordState[i] = letter;
+			replacedLettersNumber++;
+		}
+	}
+
+	return replacedLettersNumber;
 }

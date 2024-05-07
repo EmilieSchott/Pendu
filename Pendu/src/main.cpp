@@ -2,6 +2,7 @@
 #include <string>
 #include "../include/Word.h"
 #include "../include/Letter.h"
+#include "../include/Constants.h"
 
 using namespace std;
 
@@ -15,7 +16,12 @@ int main()
 	auto wordState = string(wordToGuessLength, '-');
 	displayWordState(wordState, wordToGuessLength);
 
-	char suggestedLetter = suggestLetter();
+	auto errorNumber{ 0 };
+	while (errorNumber < ERROR_ALLOWDED && wordToGuess != wordState) {
+		auto suggestedLetter = suggestLetter();
+		auto replacedLettersNumber = replaceFoundLetter(suggestedLetter, wordToGuess, wordState, wordToGuessLength);
+		displayWordState(wordState, wordToGuessLength);
+	}
 
 	return EXIT_SUCCESS;
 }
