@@ -147,11 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Letter.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Word.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Constants.h" />
+    <ClInclude Include="include\Letter.h" />
     <ClInclude Include="include\Word.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
