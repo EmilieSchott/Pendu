@@ -1,5 +1,7 @@
+#include <iostream>
 #include <string>
 #include <random>
+#include <string_view>
 
 #include "../include/Word.h"
 #include "../include/Constants.h"
@@ -16,4 +18,14 @@ string determineWord()
 	wordToGuess = POSSIBLE_WORDS[distribution(generator)];
 
 	return wordToGuess;
+}
+
+void displayWordState(string_view wordState, int& wordToGuessLength) {
+	for (auto i{ 0 }; i < wordToGuessLength; i++) {
+		cout << wordState[i];
+		if (i != wordToGuessLength - 1) {
+			cout << " ";
+		}
+	}
+	cout << endl;
 }
