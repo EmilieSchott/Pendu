@@ -3,8 +3,8 @@
 #include <random>
 #include <string_view>
 
-#include "../include/Word.h"
-#include "../include/Constants.h"
+#include "../include/word.h"
+#include "../include/constants.h"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../include/Letter.h"
+#include "../include/letter.h"
 
 using namespace std;
 

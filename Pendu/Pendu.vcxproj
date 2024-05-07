@@ -148,15 +148,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\hangedMan.cpp" />
-    <ClCompile Include="src\Letter.cpp" />
+    <ClCompile Include="src\letter.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Word.cpp" />
+    <ClCompile Include="src\word.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Constants.h" />
+    <ClInclude Include="include\constants.h" />
     <ClInclude Include="include\hangedMan.h" />
-    <ClInclude Include="include\Letter.h" />
-    <ClInclude Include="include\Word.h" />
+    <ClInclude Include="include\letter.h" />
+    <ClInclude Include="include\word.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include "../include/Word.h"
-#include "../include/Letter.h"
-#include "../include/Constants.h"
+#include "../include/word.h"
+#include "../include/letter.h"
+#include "../include/constants.h"
 #include "../include/hangedMan.h"
 
 using namespace std;
@@ -18,7 +18,7 @@ int main()
 	displayWordState(wordState, wordToGuessLength);
 
 	auto errorsNumber{ 0 };
-	while (errorsNumber < ERROR_ALLOWDED && wordToGuess != wordState) {
+	while (errorsNumber < ALLOWDED_ERRORS_NUMBER && wordToGuess != wordState) {
 		auto suggestedLetter = suggestLetter();
 		auto replacedLettersNumber = replaceFoundLetter(suggestedLetter, wordToGuess, wordState, wordToGuessLength);
 		displayWordState(wordState, wordToGuessLength);
@@ -29,11 +29,11 @@ int main()
 		}
 	}
 
-	if (errorsNumber == ERROR_ALLOWDED) {
+	if (errorsNumber == ALLOWDED_ERRORS_NUMBER) {
 		cout << "Vous avez perdu ! Le mot etait : " << wordToGuess;
 	}
 
-	if (errorsNumber < ERROR_ALLOWDED && wordToGuess == wordState) {
+	if (errorsNumber < ALLOWDED_ERRORS_NUMBER && wordToGuess == wordState) {
 		cout << "Felicitations ! Vous avez gagne !" << endl;
 	}
 
